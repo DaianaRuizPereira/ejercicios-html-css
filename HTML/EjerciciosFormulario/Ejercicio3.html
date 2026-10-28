@@ -1,0 +1,224 @@
+<!DOCTYPE html> 
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de satisfacción</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        label {
+            margin: 8px;
+        }
+
+        input, select, textarea {
+            margin: 8px;
+            padding: 5px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+
+        .nota1, .nota2 {
+            background-color: lightcoral;
+        }
+
+        .nota3 {
+            background-color: khaki;
+        }
+
+        .nota4 {
+            background-color: lightgreen;
+        }
+
+        .nota5 {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Encuesta de satisfacción</h1>
+
+    <form>
+        <fieldset>
+            <legend>Datos del cliente</legend>
+
+            <label for="nombre">Nombre del cliente (opcional):</label>
+            <input type="text" id="nombre" name="nombre">
+            <br><br>
+
+            <label for="servicio">Servicio utilizado:</label>
+            <select id="servicio" name="servicio" required>
+                <option value="">Selecciona un servicio</option>
+                <option value="Reparación">Reparación</option>
+                <option value="Instalación">Instalación</option>
+                <option value="Mantenimiento">Mantenimiento</option>
+            </select>
+            <br><br>
+
+            <label for="valoracion">Valoración general:</label>
+            <select id="valoracion" name="valoracion" required>
+                <option value="">Selecciona una nota</option>
+                <option value="1">1 - Muy mala</option>
+                <option value="2">2 - Mala</option>
+                <option value="3">3 - Regular</option>
+                <option value="4">4 - Buena</option>
+                <option value="5">5 - Excelente</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Opinión sobre el servicio</legend>
+
+            <p>¿Qué aspectos te han gustado?</p>
+
+            <input type="checkbox" id="atencion" name="aspectos" value="Atención">
+            <label for="atencion">Atención</label>
+
+            <input type="checkbox" id="rapidez" name="aspectos" value="Rapidez">
+            <label for="rapidez">Rapidez</label>
+
+            <input type="checkbox" id="precio" name="aspectos" value="Precio">
+            <label for="precio">Precio</label>
+
+            <input type="checkbox" id="calidad" name="aspectos" value="Calidad">
+            <label for="calidad">Calidad</label>
+
+            <p>¿Recomendarías el servicio?</p>
+
+            <input type="radio" id="si" name="recomienda" value="Sí" required>
+            <label for="si">Sí</label>
+
+            <input type="radio" id="no" name="recomienda" value="No">
+            <label for="no">No</label>
+
+            <br><br>
+
+            <label for="comentarios">Comentarios:</label>
+            <br>
+            <textarea id="comentarios" name="comentarios"
+                      rows="4" cols="40"></textarea>
+        </fieldset>
+
+        <button type="submit">Enviar encuesta</button>
+        <button type="reset">Limpiar campos</button>
+    </form>
+
+    <h2>Resultados de las encuestas</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Servicio</th>
+                <th>Valoración</th>
+                <th>Recomienda</th>
+                <th>Comentarios</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Ana</td>
+                <td>Reparación</td>
+                <td class="nota5">5</td>
+                <td>Sí</td>
+                <td>Muy buen servicio</td>
+            </tr>
+
+            <tr>
+                <td>Pedro</td>
+                <td>Instalación</td>
+                <td class="nota4">4</td>
+                <td>Sí</td>
+                <td>Rápido y eficaz</td>
+            </tr>
+
+            <tr>
+                <td>Lucía</td>
+                <td>Reparación</td>
+                <td class="nota3">3</td>
+                <td>No</td>
+                <td>Tardaron demasiado</td>
+            </tr>
+
+            <tr>
+                <td>Carlos</td>
+                <td>Mantenimiento</td>
+                <td class="nota5">5</td>
+                <td>Sí</td>
+                <td>Excelente atención</td>
+            </tr>
+
+            <tr>
+                <td>Elena</td>
+                <td>Instalación</td>
+                <td class="nota2">2</td>
+                <td>No</td>
+                <td>Precio elevado</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Resumen de valoraciones</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Valoración</th>
+                <th>Número de clientes</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td class="nota1">1</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td class="nota2">2</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td class="nota3">3</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td class="nota4">4</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td class="nota5">5</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

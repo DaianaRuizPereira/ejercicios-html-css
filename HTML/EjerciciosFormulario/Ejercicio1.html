@@ -1,0 +1,108 @@
+<!DOCTYPE html> 
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de inscripción</title>
+
+<style>
+    form {
+        width: 400px;
+        border: 2px solid black;
+        padding: 15px;
+    }
+    input, select {
+        box-sizing: border-box;
+        padding: 6px;
+    }
+    .campos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    hr {
+        margin-top: 15px;
+    }
+    .ancho {
+        width: 100%;
+    }
+</style>
+
+</head>
+<body> 
+
+<form action="bienvenido.html" method="post">
+  <h3>Inscripción al curso</h3>
+
+<div class="campos">
+        <label>
+            <input type="text" name="nombre" placeholder="Nombre" required>
+        </label>
+
+        <label>
+            <input type="text" name="apellidos" placeholder="Apellidos" required>
+        </label>
+
+        <label>
+            <input type="text" name="dni" placeholder="DNI" required>
+        </label>
+
+        <label>
+            <input type="date" name="fecha" required>
+        </label>
+
+        <label>
+            <input type="email" name="correo" placeholder="Correo electrónico" required>
+        </label>
+
+        <label>
+            <input type="tel" name="telefono" placeholder="Teléfono" required>
+        </label>
+    </div>
+
+    <br>
+
+    <label for="ciclo">Ciclo formativo:</label>
+    <select name="ciclo" id="ciclo" class="ancho" required>
+        <option value="">Selecciona un ciclo</option>
+        <option>SMR</option>
+        <option>ASIR</option>
+        <option>DAW</option>
+        <option>DAM</option>
+    </select>
+
+    <hr>
+
+    <label>Turno preferido:</label><br>
+    <input type="radio" id="manana" name="turno" value="Mañana" required>
+    <label for="manana">Mañana</label><br>
+
+    <input type="radio" id="tarde" name="turno" value="Tarde">
+    <label for="tarde">Tarde</label>
+
+    <hr>
+
+    <label>Modalidad:</label><br>
+    <input type="radio" id="presencial" name="modalidad" value="Presencial" required>
+    <label for="presencial">Presencial</label><br>
+
+    <input type="radio" id="semipresencial" name="modalidad" value="Semipresencial">
+    <label for="semipresencial">Semipresencial</label><br>
+
+    <input type="radio" id="online" name="modalidad" value="Online">
+    <label for="online">Online</label>
+
+    <hr>
+
+    <input type="checkbox" id="privacidad" name="privacidad" value="Aceptada" required>
+    <label for="privacidad">Acepto la política de privacidad</label>
+
+    <br><br>
+
+    <input type="submit" value="Inscribirse" class="ancho">
+
+</form>
+
+</body>
+</html>

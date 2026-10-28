@@ -1,0 +1,173 @@
+<!DOCTYPE html> 
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de reserva de una biblioteca</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        label {
+            display: inline-block;
+            width: 200px;
+            margin: 8px;
+        }
+
+        input, select, textarea {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: rgb(205, 132, 247);
+        }
+
+        .pendiente {
+            background-color: rgb(248, 248, 160);
+        }
+
+        .confirmada {
+            background-color: rgb(186, 247, 186);
+        }
+
+        .entregada {
+            background-color: rgb(188, 228, 241);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Reservar libros en la biblioteca</h1>
+
+    <form>
+        <fieldset>
+            <legend>Datos del usuario</legend>
+
+            <label for="nombre">Nombre del usuario:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br>
+
+            <label for="socio">Número de socio:</label>
+            <input type="number" id="socio" name="socio" required>
+            <br>
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Datos del libro</legend>
+
+            <label for="libro">Título del libro:</label>
+            <input type="text" id="libro" name="libro" required>
+            <br>
+
+            <label for="autor">Autor:</label>
+            <input type="text" id="autor" name="autor" required>
+            <br>
+
+            <label for="reserva">Fecha de reserva:</label>
+            <input type="date" id="reserva" name="reserva" required>
+            <br>
+
+            <label for="recogida">Fecha prevista de recogida:</label>
+            <input type="date" id="recogida" name="recogida" required>
+            <br>
+
+            <label for="prestamo">Tipo de préstamo:</label>
+            <select id="prestamo" name="prestamo">
+                <option value="sala">En sala</option>
+                <option value="domicilio">A domicilio</option>
+            </select>
+            <br>
+
+            <label for="comentarios">Comentarios adicionales:</label>
+            <textarea id="comentarios" name="comentarios"></textarea>
+        </fieldset>
+
+        <button type="submit">Enviar reserva</button>
+        <button type="reset">Limpiar campos</button>
+    </form>
+
+    <h2>Reservas registradas</h2>
+
+    <label for="buscar">Buscar por número de socio:</label>
+    <input type="number" id="buscar" placeholder="Número de socio">
+    <button type="button" onclick="buscarReserva()">Buscar</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>N.º reserva</th>
+                <th>Usuario</th>
+                <th>Libro</th>
+                <th>Fecha de reserva</th>
+                <th>Estado</th>
+                <th>N.º socio</th>
+            </tr>
+        </thead>
+
+        <tbody id="reservas">
+            <tr>
+                <td>1</td>
+                <td>Ana López</td>
+                <td>El principito</td>
+                <td>14/10/2026</td>
+                <td class="pendiente">Pendiente</td>
+                <td>101</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Pablo Ruiz</td>
+                <td>La sombra del viento</td>
+                <td>13/10/2026</td>
+                <td class="confirmada">Confirmada</td>
+                <td>102</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Marta Díaz</td>
+                <td>Don Quijote</td>
+                <td>12/10/2026</td>
+                <td class="entregada">Entregada</td>
+                <td>103</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Luis Martín</td>
+                <td>Cien años de soledad</td>
+                <td>11/10/2026</td>
+                <td class="pendiente">Pendiente</td>
+                <td>104</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
